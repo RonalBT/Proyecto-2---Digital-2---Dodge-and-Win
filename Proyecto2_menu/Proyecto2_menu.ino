@@ -38,7 +38,7 @@
 #include "lcd_registers.h"
 
 File myFile;
-
+//Definimos las variables 
 /*extern unsigned char fondoVolcan[];
 extern unsigned char Bloquelava[];*/
 extern unsigned char PedazoSalto[];
@@ -191,6 +191,7 @@ void setup() {
 // Loop Infinito
 //***************************************************************************************************************************************
 void loop() {
+  //Activación de la primera bandera para el menú principal
   while (contadormenu == 0){
     salto1 = 0;
     agacharse1 = 0;
@@ -208,7 +209,7 @@ void loop() {
     Patron = 0;
     Inicio = 0;
     //mapeo_SD("Menu.txt", 0, 0, 320, 240);
-
+//se examina que canción está sonando 
     if(Cancion == 0){
       digitalWrite(Tono1, HIGH);
       digitalWrite(Tono2, LOW);
@@ -245,7 +246,7 @@ void loop() {
     }
 
     
-    
+    //textos e imágenes a mostrar en la pantalla
     /*if (contador == 0)
     LCD_Bitmap(0, 0, 320, 240, fondomenu);
     LCD_Print(text2, 175, 75, 2, 0xffff, 0x246);
@@ -290,7 +291,7 @@ void loop() {
       contadormenu = 3;
     }
   }
-  
+  //Activación de la bandera para el inicio del juego
   while (contadormenu == 1){
     if(Cancion == 0){
       digitalWrite(Tono1, HIGH);
@@ -631,7 +632,7 @@ void loop() {
       }
     }
   }
-  //menu musica
+  //activación de la bandera para menu musica
   while (contadormenu == 2){
     if(Cancion == 0){
       digitalWrite(Tono1, HIGH);
@@ -667,6 +668,7 @@ void loop() {
       }
       antirebote = 0;
     }
+    //textos de opciones
     if (contador == 1){
       //LCD_Bitmap(0, 0, 320, 240, fondomenu);
       LCD_Print(text4, 175, 75, 2, 0xffff, 0x246);
@@ -711,7 +713,7 @@ void loop() {
       contadormenu = 0;
     }
   }
-  //menu pantalla
+  //Activación de bandera para el menu  de pantalla
     while (contadormenu == 3){
       if(Cancion == 0){
         digitalWrite(Tono1, HIGH);
